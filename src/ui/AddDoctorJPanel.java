@@ -6,6 +6,8 @@
 package ui;
 
 import javax.swing.JOptionPane;
+import model.DoctorHistory;
+import model.DoctorInfo;
 
 /**
  *
@@ -16,8 +18,12 @@ public class AddDoctorJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AddDoctorJPanel
      */
-    public AddDoctorJPanel() {
+    DoctorHistory history;
+    
+    public AddDoctorJPanel(DoctorHistory history) {
         initComponents();
+        this.history = history;
+        
     }
 
     /**
@@ -139,7 +145,34 @@ public class AddDoctorJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Information Added!");
+        
+        if(txtDocName.getText().equals("")||txtHospital.getText().equals("")||txtHospCity.getText().equals("")||txtComm.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Please enter all details!");
+        }
+        else {
+            
+            String doctorName = txtDocName.getText();
+            String hospitalName = txtHospital.getText();
+            String hospitalCity = txtHospCity.getText();
+            String hospitalCommunity = txtComm.getText();
+            
+            DoctorInfo di = history.addNewDoctor();
+            
+            di.setDoctorName(doctorName);
+            di.setHospitalName(hospitalName);
+            di.setHospitalCity(hospitalCity);
+            di.setHospitalCommunity(hospitalCommunity);
+            
+            
+            
+            JOptionPane.showMessageDialog(this, "Information Added!");
+            
+            txtDocName.setText("");
+            txtHospital.setText("");
+            txtHospCity.setText("");
+            txtComm.setText("");
+        }
+        
     }//GEN-LAST:event_btnSaveActionPerformed
 
 

@@ -5,6 +5,8 @@
  */
 package ui;
 
+import model.DoctorHistory;
+
 /**
  *
  * @author kshetrahegde
@@ -14,8 +16,12 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
+    DoctorHistory history;
+    
     public MainJFrame() {
         initComponents();
+        history = new DoctorHistory();
+        
     }
 
     /**
@@ -140,11 +146,13 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientActionPerformed
         // TODO add your handling code here:
+        FindDoctorJPanel findDoctor = new FindDoctorJPanel(history);
+        splitPane.setRightComponent(findDoctor);
     }//GEN-LAST:event_btnPatientActionPerformed
 
     private void btnHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHospitalActionPerformed
         // TODO add your handling code here:
-        AddDoctorJPanel addDoctor = new AddDoctorJPanel();
+        AddDoctorJPanel addDoctor = new AddDoctorJPanel(history);
         splitPane.setRightComponent(addDoctor);
     }//GEN-LAST:event_btnHospitalActionPerformed
 

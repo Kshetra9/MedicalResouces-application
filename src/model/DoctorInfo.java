@@ -12,7 +12,7 @@ package model;
 public class DoctorInfo {
     
     private String doctorName;
-    private String doctorHospital;
+    
     private String hospitalName;
     private String hospitalCity;
     private String hospitalCommunity;
@@ -25,13 +25,7 @@ public class DoctorInfo {
         this.doctorName = doctorName;
     }
 
-    public String getDoctorHospital() {
-        return doctorHospital;
-    }
-
-    public void setDoctorHospital(String doctorHospital) {
-        this.doctorHospital = doctorHospital;
-    }
+    
 
     public String getHospitalName() {
         return hospitalName;
