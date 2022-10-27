@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package model;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -22,7 +23,7 @@ public class PatientInfo {
     private String assignedDoctor;
     
     
-    Date d1 = new Date();
+    LocalDate d1;
 
     public String getPatientName() {
         return patientName;
@@ -88,11 +89,11 @@ public class PatientInfo {
         this.assignedDoctor = assignedDoctor;
     }
 
-    public Date getD1() {
+    public LocalDate getD1() {
         return d1;
     }
 
-    public void setD1(Date d1) {
+    public void setD1(LocalDate d1) {
         this.d1 = d1;
     }
     

@@ -6,6 +6,7 @@
 package ui;
 
 import model.DoctorHistory;
+import model.EncounterHistory;
 
 /**
  *
@@ -17,10 +18,12 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     DoctorHistory history;
+    EncounterHistory encounterhistory;
     
     public MainJFrame() {
         initComponents();
         history = new DoctorHistory();
+        encounterhistory = new EncounterHistory();
         
     }
 
@@ -168,7 +171,7 @@ public class MainJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-        AddPatientJPanel addPatient = new AddPatientJPanel();
+        AddPatientJPanel addPatient = new AddPatientJPanel(encounterhistory);
         splitPane.setRightComponent(addPatient);
     }//GEN-LAST:event_btnHospital1ActionPerformed
 

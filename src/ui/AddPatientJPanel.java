@@ -5,6 +5,14 @@
  */
 package ui;
 
+import java.time.LocalDate;
+import java.util.Date;
+import static java.util.Date.parse;
+import javax.swing.JOptionPane;
+import model.DoctorInfo;
+import model.EncounterHistory;
+import model.PatientInfo;
+
 /**
  *
  * @author kshetrahegde
@@ -14,8 +22,11 @@ public class AddPatientJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AddPatientJPanel
      */
-    public AddPatientJPanel() {
+    EncounterHistory history;
+
+    public AddPatientJPanel(EncounterHistory history) {
         initComponents();
+        this.history = history;
     }
 
     /**
@@ -47,6 +58,7 @@ public class AddPatientJPanel extends javax.swing.JPanel {
         txtPulse = new javax.swing.JTextField();
         txtAssigned = new javax.swing.JTextField();
         txtDate = new javax.swing.JTextField();
+        btnSave = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -89,35 +101,47 @@ public class AddPatientJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPatName)
-                    .addComponent(lblPatAge)
-                    .addComponent(lblPatCity)
-                    .addComponent(lblPatID)
-                    .addComponent(lblEncID)
-                    .addComponent(lblBP)
-                    .addComponent(lblPulse)
-                    .addComponent(lblAssigned)
-                    .addComponent(lblDate))
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAssigned, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtBP)
-                        .addComponent(txtPatName)
-                        .addComponent(txtPatAge)
-                        .addComponent(txtPatCity)
-                        .addComponent(txtPatID, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(txtEncID, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(txtPulse, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPatName)
+                            .addComponent(lblPatAge)
+                            .addComponent(lblPatCity)
+                            .addComponent(lblPatID)
+                            .addComponent(lblEncID)
+                            .addComponent(lblBP)
+                            .addComponent(lblPulse)
+                            .addComponent(lblAssigned)
+                            .addComponent(lblDate))
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAssigned, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtBP)
+                                .addComponent(txtPatName)
+                                .addComponent(txtPatAge)
+                                .addComponent(txtPatCity)
+                                .addComponent(txtPatID, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(txtEncID, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(txtPulse, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(186, 186, 186)
+                        .addComponent(btnSave)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -161,6 +185,8 @@ public class AddPatientJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblDate)
                     .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnSave)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -177,8 +203,57 @@ public class AddPatientJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBPActionPerformed
 
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        // TODO add your handling code here:
+
+        if (txtPatName.getText().equals("") || txtPulse.getText().equals("") || txtPatID.getText().equals("") || txtPatCity.getText().equals("") || txtPatAge.getText().equals("") || txtEncID.getText().equals("") || txtDate.getText().equals("") || txtBP.getText().equals("") || txtAssigned.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Please enter all details!");
+        } else {
+
+            String patientName = txtPatName.getText();
+            int age = Integer.parseInt(txtPatAge.getText());
+            String city = txtPatCity.getText();
+            int patientId = Integer.parseInt(txtPatID.getText());
+            int encounterId = Integer.parseInt(txtEncID.getText());
+            int bloodPressure = Integer.parseInt(txtBP.getText());
+            int pulse = Integer.parseInt(txtPulse.getText());
+            String assignedDoctor = txtAssigned.getText();
+            
+            //Date d1 = new Date();
+            LocalDate d1 = LocalDate.parse(txtDate.getText());
+            //java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            //java.time.LocalDate textFieldAsDate = java.time.LocalDate.parse(text, formatter);
+
+
+            PatientInfo pi = history.addNewPatient();
+
+            pi.setPatientName(patientName);
+            pi.setAge(age);
+            pi.setCity(city);
+            pi.setPatientId(patientId);
+            pi.setEncounterId(encounterId);
+            pi.setBloodPressure(bloodPressure);
+            pi.setPulse(pulse);
+            pi.setAssignedDoctor(assignedDoctor);
+            pi.setD1(d1);
+
+            JOptionPane.showMessageDialog(this, "Information Added!");
+
+            txtPatName.setText("");
+            txtPatAge.setText("");
+            txtPatCity.setText("");
+            txtPatID.setText("");
+            txtEncID.setText("");
+            txtBP.setText("");
+            txtPulse.setText("");
+            txtAssigned.setText("");
+            
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblAssigned;

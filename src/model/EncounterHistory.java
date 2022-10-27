@@ -28,5 +28,11 @@ public class EncounterHistory {
         this.history = history;
     }
     
+    public PatientInfo addNewPatient() {
+        PatientInfo addPatient = new PatientInfo();
+        history.add(addPatient);
+        return addPatient;
+    }
+    
     
 }
