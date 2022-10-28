@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package model;
+
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -12,18 +13,36 @@ import java.util.Date;
  * @author kshetrahegde
  */
 public class PatientInfo {
-    
+
     private String patientName;
     private int age;
     private String city;
     private int patientId;
     private int encounterId;
-    private double bloodPressure;
     private int pulse;
     private String assignedDoctor;
-    
-    
+    private String diagnosis;
+    private int bloodPressure;
     LocalDate d1;
+    
+
+    public int getBloodPressure() {
+        return bloodPressure;
+    }
+
+    public void setBloodPressure(int bloodPressure) {
+        this.bloodPressure = bloodPressure;
+    }
+
+    public String getDiagnosis() {
+        return diagnosis;
+    }
+
+    public void setDiagnosis(String diagnosis) {
+        this.diagnosis = diagnosis;
+    }
+
+    
 
     public String getPatientName() {
         return patientName;
@@ -65,14 +84,6 @@ public class PatientInfo {
         this.encounterId = encounterId;
     }
 
-    public double getBloodPressure() {
-        return bloodPressure;
-    }
-
-    public void setBloodPressure(double bloodPressure) {
-        this.bloodPressure = bloodPressure;
-    }
-
     public int getPulse() {
         return pulse;
     }
@@ -97,6 +108,9 @@ public class PatientInfo {
         this.d1 = d1;
     }
     
-    
-    
+    @Override
+    public String toString(){
+        return patientName;
+    }
+
 }

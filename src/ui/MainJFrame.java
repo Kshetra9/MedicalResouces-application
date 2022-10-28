@@ -56,6 +56,11 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         btnDoctor.setText("Doctor Login");
+        btnDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDoctorActionPerformed(evt);
+            }
+        });
 
         btnCommunity.setText("Comm. Admin");
         btnCommunity.addActionListener(new java.awt.event.ActionListener() {
@@ -174,6 +179,12 @@ public class MainJFrame extends javax.swing.JFrame {
         AddPatientJPanel addPatient = new AddPatientJPanel(encounterhistory);
         splitPane.setRightComponent(addPatient);
     }//GEN-LAST:event_btnHospital1ActionPerformed
+
+    private void btnDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorActionPerformed
+        // TODO add your handling code here:
+        DoctorLoginJPanel doctorLogin = new DoctorLoginJPanel(encounterhistory);
+        splitPane.setRightComponent(doctorLogin);
+    }//GEN-LAST:event_btnDoctorActionPerformed
 
     /**
      * @param args the command line arguments

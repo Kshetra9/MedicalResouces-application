@@ -59,6 +59,8 @@ public class AddPatientJPanel extends javax.swing.JPanel {
         txtAssigned = new javax.swing.JTextField();
         txtDate = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
+        lblReport = new javax.swing.JLabel();
+        txtReport = new javax.swing.JTextField();
 
         jLabel1.setText("jLabel1");
 
@@ -108,6 +110,8 @@ public class AddPatientJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblReport.setText("Report");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -125,9 +129,11 @@ public class AddPatientJPanel extends javax.swing.JPanel {
                             .addComponent(lblBP)
                             .addComponent(lblPulse)
                             .addComponent(lblAssigned)
-                            .addComponent(lblDate))
+                            .addComponent(lblDate)
+                            .addComponent(lblReport))
                         .addGap(9, 9, 9)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtReport, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtAssigned, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -140,13 +146,13 @@ public class AddPatientJPanel extends javax.swing.JPanel {
                                 .addComponent(txtEncID, javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(txtPulse, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(186, 186, 186)
+                        .addGap(188, 188, 188)
                         .addComponent(btnSave)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabel2)
                 .addGap(23, 23, 23)
@@ -185,9 +191,13 @@ public class AddPatientJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblDate)
                     .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtReport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblReport))
                 .addGap(18, 18, 18)
                 .addComponent(btnSave)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -206,7 +216,7 @@ public class AddPatientJPanel extends javax.swing.JPanel {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
 
-        if (txtPatName.getText().equals("") || txtPulse.getText().equals("") || txtPatID.getText().equals("") || txtPatCity.getText().equals("") || txtPatAge.getText().equals("") || txtEncID.getText().equals("") || txtDate.getText().equals("") || txtBP.getText().equals("") || txtAssigned.getText().equals("")) {
+        if (txtPatName.getText().equals("") || txtPulse.getText().equals("") || txtPatID.getText().equals("") || txtPatCity.getText().equals("") || txtPatAge.getText().equals("") || txtEncID.getText().equals("") ||  txtBP.getText().equals("") || txtAssigned.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Please enter all details!");
         } else {
 
@@ -218,11 +228,8 @@ public class AddPatientJPanel extends javax.swing.JPanel {
             int bloodPressure = Integer.parseInt(txtBP.getText());
             int pulse = Integer.parseInt(txtPulse.getText());
             String assignedDoctor = txtAssigned.getText();
-            
-            //Date d1 = new Date();
             LocalDate d1 = LocalDate.parse(txtDate.getText());
-            //java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            //java.time.LocalDate textFieldAsDate = java.time.LocalDate.parse(text, formatter);
+            String diagnosis = txtReport.getText();
 
 
             PatientInfo pi = history.addNewPatient();
@@ -236,6 +243,7 @@ public class AddPatientJPanel extends javax.swing.JPanel {
             pi.setPulse(pulse);
             pi.setAssignedDoctor(assignedDoctor);
             pi.setD1(d1);
+            pi.setDiagnosis(diagnosis);
 
             JOptionPane.showMessageDialog(this, "Information Added!");
 
@@ -247,6 +255,7 @@ public class AddPatientJPanel extends javax.swing.JPanel {
             txtBP.setText("");
             txtPulse.setText("");
             txtAssigned.setText("");
+            txtDate.setText("");
             
         }
     }//GEN-LAST:event_btnSaveActionPerformed
@@ -265,6 +274,7 @@ public class AddPatientJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblPatID;
     private javax.swing.JLabel lblPatName;
     private javax.swing.JLabel lblPulse;
+    private javax.swing.JLabel lblReport;
     private javax.swing.JTextField txtAssigned;
     private javax.swing.JTextField txtBP;
     private javax.swing.JTextField txtDate;
@@ -274,5 +284,6 @@ public class AddPatientJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtPatID;
     private javax.swing.JTextField txtPatName;
     private javax.swing.JTextField txtPulse;
+    private javax.swing.JTextField txtReport;
     // End of variables declaration//GEN-END:variables
 }
