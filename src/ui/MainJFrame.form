@@ -28,7 +28,10 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="splitPane" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="splitPane" min="-2" pref="813" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -47,18 +50,34 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnHospital" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnSystemPatient" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnDoctor" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnPatient" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnCommunity" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnSystem" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnHospital1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnSystemPersons" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnSystemCommunity" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Component id="btnHospital" alignment="0" max="32767" attributes="0"/>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnSystemHospital" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnSystemDoctors" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -71,12 +90,30 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnCommunity" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnSystem" min="-2" pref="61" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnHospital1" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnHospital" min="-2" pref="61" max="-2" attributes="0"/>
-                      <EmptySpace pref="22" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnSystemPatient" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                      <Component id="btnSystemPersons" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace pref="110" max="32767" attributes="0"/>
+                      <Component id="btnSystemCommunity" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="498" max="32767" attributes="0"/>
+                          <Component id="btnSystemHospital" min="-2" pref="61" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="660" max="32767" attributes="0"/>
+                          <Component id="btnSystemDoctors" min="-2" pref="61" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -114,12 +151,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPatientActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnSystem">
+            <Component class="javax.swing.JButton" name="btnSystemPatient">
               <Properties>
-                <Property name="text" type="java.lang.String" value="System Admin"/>
+                <Property name="text" type="java.lang.String" value="System Admin : Manage Patients Directory"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSystemActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSystemPatientActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnHospital1">
@@ -130,9 +167,41 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHospital1ActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JButton" name="btnSystemPersons">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="System Admin : Manage Persons Directory"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSystemPersonsActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnSystemHospital">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="System Admin : Manage Hospital Directory"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSystemHospitalActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnSystemCommunity">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="System Admin : Manage Community Directory"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSystemCommunityActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnSystemDoctors">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="System Admin : Manage Doctors Directory"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSystemDoctorsActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="workArea">
+        <Container class="javax.swing.JPanel" name="userProcessContainer">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">
               <JSplitPaneConstraints position="right"/>
@@ -147,7 +216,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="492" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="809" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>

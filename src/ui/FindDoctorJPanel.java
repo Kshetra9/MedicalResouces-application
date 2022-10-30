@@ -5,6 +5,7 @@
  */
 package ui;
 
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import model.DoctorHistory;
 import model.DoctorInfo;
@@ -19,10 +20,12 @@ public class FindDoctorJPanel extends javax.swing.JPanel {
      * Creates new form FindDoctorJPanel
      */
     DoctorHistory history;
+    private JPanel userProcessContainer;
     
-    public FindDoctorJPanel(DoctorHistory history) {
+    public FindDoctorJPanel(JPanel userProcessContainer, DoctorHistory history) {
         initComponents();
         this.history = history;
+        this.userProcessContainer = userProcessContainer;
         
         displayTable();
     }
@@ -126,7 +129,7 @@ public class FindDoctorJPanel extends javax.swing.JPanel {
         
         for (DoctorInfo di : history.getHistory()){
             
-            Object[] row = new Object[10];
+            Object[] row = new Object[4];
             row[0] = di.getDoctorName();
             row[1] = di.getHospitalName();
             row[2] = di.getHospitalCity();

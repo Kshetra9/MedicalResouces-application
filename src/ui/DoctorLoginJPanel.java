@@ -360,10 +360,7 @@ public class DoctorLoginJPanel extends javax.swing.JPanel {
             model1.addRow(row);
             
         }
-        
-        
-        
-        
+         
         
     }
 
