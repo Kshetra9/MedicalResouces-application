@@ -64,6 +64,12 @@ public class AddDoctorJPanel extends javax.swing.JPanel {
 
         btnDocCity.setText("City");
 
+        txtDocName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtDocNameKeyPressed(evt);
+            }
+        });
+
         btnComm.setText("Community");
 
         txtHospCity.addActionListener(new java.awt.event.ActionListener() {
@@ -165,16 +171,20 @@ public class AddDoctorJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
+        try {
+            
         
         if(txtDocName.getText().equals("")||txtHospital.getText().equals("")||txtHospCity.getText().equals("")||txtComm.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Please enter all details!");
         }
+        
         else {
             
             String doctorName = txtDocName.getText();
             String hospitalName = txtHospital.getText();
             String hospitalCity = txtHospCity.getText();
             String hospitalCommunity = txtComm.getText();
+            
             
             DoctorInfo di = history.addNewDoctor();
             
@@ -193,7 +203,10 @@ public class AddDoctorJPanel extends javax.swing.JPanel {
             txtComm.setText("");
             
             
-        }
+        }}
+        catch (NumberFormatException e){
+                JOptionPane.showMessageDialog(this, "Please enter valid data!");
+                }
         
     }//GEN-LAST:event_btnSaveActionPerformed
 
@@ -205,6 +218,18 @@ public class AddDoctorJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
         
     }//GEN-LAST:event_btnViewActionPerformed
+
+    private void txtDocNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDocNameKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtDocName.setEditable(false);
+        }
+        else {
+            txtDocName.setEditable(true);
+        }
+    }//GEN-LAST:event_txtDocNameKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
