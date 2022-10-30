@@ -278,15 +278,19 @@ public class ManageCommunityJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblAddCommunity.getModel();
 
         if(tblAddCommunity.getSelectedRowCount() == 1) {
-            String doctorName = txtName.getText();
-            String hospitalName = txtAddr.getText();
-            String hospitalCity = txtCity.getText();
-            String hospitalCommunity = txtComm.getText();
+            String personName = txtName.getText();
+            String personAddress = txtAddr.getText();
+            String commName = txtComm.getText();
+            String commCity = txtCity.getText();
+            String hospNearby = txthosp.getText();
 
-            model.setValueAt(doctorName, tblAddCommunity.getSelectedRow(), 0);
-            model.setValueAt(hospitalName, tblAddCommunity.getSelectedRow(), 1);
-            model.setValueAt(hospitalCity, tblAddCommunity.getSelectedRow(), 2);
-            model.setValueAt(hospitalCommunity, tblAddCommunity.getSelectedRow(), 3);
+            model.setValueAt(personName, tblAddCommunity.getSelectedRow(), 0);
+            model.setValueAt(personAddress, tblAddCommunity.getSelectedRow(), 1);
+            model.setValueAt(commName, tblAddCommunity.getSelectedRow(), 2);
+            model.setValueAt(commCity, tblAddCommunity.getSelectedRow(), 3);
+            model.setValueAt(hospNearby, tblAddCommunity.getSelectedRow(), 4);
+            
+            
         }
     }//GEN-LAST:event_btnUpdateActionPerformed
 

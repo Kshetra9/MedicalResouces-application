@@ -248,6 +248,8 @@ public class MainJFrame extends javax.swing.JFrame {
 //        userProcessContainer.add("test", finalJ);
 //        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
 //        layout.next(userProcessContainer);
+          ModifyCommunityJPanel modifyCommunity = new ModifyCommunityJPanel(commhistory);
+          splitPane.setRightComponent(modifyCommunity);
     }//GEN-LAST:event_btnCommunityActionPerformed
 
     private void btnSystemPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSystemPatientActionPerformed

@@ -39,4 +39,5 @@ public class CommunityHistory {
         commhistory.remove(ci);
     }
     
+    
 }
