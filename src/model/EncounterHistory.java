@@ -34,5 +34,10 @@ public class EncounterHistory {
         return addPatient;
     }
     
+    public void deletePatient(PatientInfo pi){
+        
+        history.remove(pi);
+    }
+    
     
 }

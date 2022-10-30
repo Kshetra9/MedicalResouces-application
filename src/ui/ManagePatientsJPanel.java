@@ -20,9 +20,12 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
      * Creates new form ManagePatientsJPanel
      */
     EncounterHistory encounterhistory;
+    
     public ManagePatientsJPanel(EncounterHistory encounterhistory) {
         initComponents();
         this.encounterhistory = encounterhistory;
+        
+        
         
         
     }
@@ -62,7 +65,8 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPatientsDirectory = new javax.swing.JTable();
         btnView = new javax.swing.JButton();
-        test = new javax.swing.JTextField();
+        btnDelete = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
 
         jLabel2.setText("Add Patient Details");
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -139,6 +143,20 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+
+        btnRefresh.setText("Refresh");
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -183,13 +201,12 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(209, 209, 209)
-                                                .addComponent(btnView))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(135, 135, 135)
-                                                .addComponent(test, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(116, 116, 116)
+                                        .addComponent(btnRefresh)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnView)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnDelete)
                                         .addGap(0, 0, Short.MAX_VALUE)))))))
                 .addContainerGap())
         );
@@ -221,21 +238,18 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEncID)
                     .addComponent(txtEncID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnView))
+                    .addComponent(btnView)
+                    .addComponent(btnDelete)
+                    .addComponent(btnRefresh))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblBP)
                     .addComponent(txtBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblPulse)
-                            .addComponent(txtPulse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(test, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPulse)
+                    .addComponent(txtPulse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAssigned)
                     .addComponent(txtAssigned, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -297,6 +311,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             txtPulse.setText("");
             txtAssigned.setText("");
             txtDate.setText("");
+            txtReport.setText("");
             displayTable();
 
         }
@@ -335,14 +350,26 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             
             model.setValueAt(patientName, tblPatientsDirectory.getSelectedRow(), 0);
             model.setValueAt(age, tblPatientsDirectory.getSelectedRow(), 1);
-            model.setValueAt(city, tblPatientsDirectory.getSelectedRow(), 2);
-            model.setValueAt(patientId, tblPatientsDirectory.getSelectedRow(), 3);
-            model.setValueAt(encounterId, tblPatientsDirectory.getSelectedRow(), 4);
-            model.setValueAt(bloodPressure, tblPatientsDirectory.getSelectedRow(), 5);
-            model.setValueAt(pulse, tblPatientsDirectory.getSelectedRow(), 6);
-            model.setValueAt(assignedDoctor, tblPatientsDirectory.getSelectedRow(), 7);
-            model.setValueAt(d1, tblPatientsDirectory.getSelectedRow(), 8);
-            model.setValueAt(diagnosis, tblPatientsDirectory.getSelectedRow(), 9);
+            model.setValueAt(city, tblPatientsDirectory.getSelectedRow(), 8);
+            model.setValueAt(patientId, tblPatientsDirectory.getSelectedRow(), 2);
+            model.setValueAt(encounterId, tblPatientsDirectory.getSelectedRow(), 6);
+            model.setValueAt(bloodPressure, tblPatientsDirectory.getSelectedRow(), 4);
+            model.setValueAt(pulse, tblPatientsDirectory.getSelectedRow(), 5);
+            model.setValueAt(assignedDoctor, tblPatientsDirectory.getSelectedRow(), 9);
+            model.setValueAt(d1, tblPatientsDirectory.getSelectedRow(), 3);
+            model.setValueAt(diagnosis, tblPatientsDirectory.getSelectedRow(), 7);
+            
+            
+            txtPatName.setText("");
+            txtPatAge.setText("");
+            txtPatCity.setText("");
+            txtPatID.setText("");
+            txtEncID.setText("");
+            txtBP.setText("");
+            txtPulse.setText("");
+            txtAssigned.setText("");
+            txtDate.setText("");
+            txtReport.setText("");
             
         }
     }//GEN-LAST:event_btnSave1ActionPerformed
@@ -366,13 +393,13 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         
         txtPatName.setText(model.getValueAt(selectedRowIndex, 0).toString());
         txtPatAge.setText(model.getValueAt(selectedRowIndex, 1).toString());
-        txtPatCity.setText(model.getValueAt(selectedRowIndex, 2).toString());
-        txtPatID.setText(model.getValueAt(selectedRowIndex, 3).toString());
-        txtEncID.setText(model.getValueAt(selectedRowIndex, 4).toString());
-        txtBP.setText(model.getValueAt(selectedRowIndex, 5).toString());
-        txtPulse.setText(model.getValueAt(selectedRowIndex, 6).toString());
-        txtAssigned.setText(model.getValueAt(selectedRowIndex, 7).toString());
-        txtDate.setText(model.getValueAt(selectedRowIndex, 8).toString());
+        txtPatCity.setText(model.getValueAt(selectedRowIndex, 8).toString());
+        txtPatID.setText(model.getValueAt(selectedRowIndex, 2).toString());
+        txtEncID.setText(model.getValueAt(selectedRowIndex, 6).toString());
+        txtBP.setText(model.getValueAt(selectedRowIndex, 4).toString());
+        txtPulse.setText(model.getValueAt(selectedRowIndex, 5).toString());
+        txtAssigned.setText(model.getValueAt(selectedRowIndex, 9).toString());
+        txtDate.setText(model.getValueAt(selectedRowIndex, 3).toString());
         txtReport.setText(model.getValueAt(selectedRowIndex, 9).toString());
         
         /* txtPatName.setText(selectedpatient.getPatientName());
@@ -391,9 +418,42 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnViewActionPerformed
 
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRowIndex = tblPatientsDirectory.getSelectedRow();
+        
+        if(selectedRowIndex<0) {
+            
+            JOptionPane.showMessageDialog(this, "Please select the row!");
+            return;
+        }
+        
+        DefaultTableModel model = (DefaultTableModel) tblPatientsDirectory.getModel();
+        PatientInfo selectPatient = (PatientInfo) model.getValueAt(selectedRowIndex, 0);
+        
+        encounterhistory.deletePatient(selectPatient);
+        JOptionPane.showMessageDialog(this, "Employee Information Deleted!");
+        displayTable();
+//        if(tblPatientsDirectory.getSelectedRowCount()==1) {
+//            model.removeRow(tblPatientsDirectory.getSelectedRow());
+//            JOptionPane.showMessageDialog(this, "Employee Information Deleted!");
+//        }
+
+
+        
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        // TODO add your handling code here:
+        displayTable();
+    }//GEN-LAST:event_btnRefreshActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnSave1;
     private javax.swing.JButton btnView;
     private javax.swing.JLabel jLabel2;
@@ -409,7 +469,6 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblPulse;
     private javax.swing.JLabel lblReport;
     private javax.swing.JTable tblPatientsDirectory;
-    private javax.swing.JTextField test;
     private javax.swing.JTextField txtAssigned;
     private javax.swing.JTextField txtBP;
     private javax.swing.JTextField txtDate;
@@ -431,7 +490,8 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         for (PatientInfo pi : encounterhistory.getHistory()){
             
             Object[] row = new Object[10];
-            row[0] = pi.getPatientName();
+            //row[0] = pi.getPatientName();
+            row[0] = pi;
             row[1] = pi.getAge();
             row[2] = pi.getPatientId();
             row[3] = pi.getD1();

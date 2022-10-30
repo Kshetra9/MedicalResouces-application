@@ -9,8 +9,7 @@ import java.awt.CardLayout;
 import javax.swing.JPanel;
 import model.DoctorHistory;
 import model.EncounterHistory;
-import ui.test.FinalJPanel;
-import ui.test.TestJPanel;
+import model.PatientInfo;
 
 /**
  *
@@ -23,6 +22,7 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     DoctorHistory history;
     EncounterHistory encounterhistory;
+    
     
     
     public MainJFrame() {
@@ -232,10 +232,10 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommunityActionPerformed
         // TODO add your handling code here:
-        FinalJPanel finalJ = new FinalJPanel(userProcessContainer);
-        userProcessContainer.add("test", finalJ);
-        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+//        FinalJPanel finalJ = new FinalJPanel(userProcessContainer);
+//        userProcessContainer.add("test", finalJ);
+//        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+//        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnCommunityActionPerformed
 
     private void btnSystemPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSystemPatientActionPerformed
