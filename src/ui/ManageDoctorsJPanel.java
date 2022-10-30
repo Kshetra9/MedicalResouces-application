@@ -50,6 +50,7 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
         tblAddDoctors = new javax.swing.JTable();
         btnView = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
 
         lblTitle.setText("Doctor Directory Information");
 
@@ -107,11 +108,23 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblAddDoctors);
 
         btnView.setText("View");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
 
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRefreshActionPerformed(evt);
+            }
+        });
+
+        btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
             }
         });
 
@@ -150,8 +163,10 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(86, 86, 86)
                                 .addComponent(btnView)
-                                .addGap(50, 50, 50)
-                                .addComponent(btnRefresh)))))
+                                .addGap(18, 18, 18)
+                                .addComponent(btnRefresh)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnDelete)))))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -187,7 +202,8 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnView)
-                            .addComponent(btnRefresh))))
+                            .addComponent(btnRefresh)
+                            .addComponent(btnDelete))))
                 .addContainerGap(144, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -239,6 +255,22 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
+        
+        int selectedRowIndex = tblAddDoctors.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) tblAddDoctors.getModel();
+        
+        if(tblAddDoctors.getSelectedRowCount() == 1) {
+            String doctorName = txtName.getText();
+            String hospitalName = txtHosp.getText();
+            String hospitalCity = txtCity.getText();
+            String hospitalCommunity = txtComm.getText();
+            
+            
+            model.setValueAt(doctorName, tblAddDoctors.getSelectedRow(), 0);
+            model.setValueAt(hospitalName, tblAddDoctors.getSelectedRow(), 1);
+            model.setValueAt(hospitalCity, tblAddDoctors.getSelectedRow(), 2);
+            model.setValueAt(hospitalCommunity, tblAddDoctors.getSelectedRow(), 3);
+        }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
@@ -246,9 +278,53 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
         displayTable();
     }//GEN-LAST:event_btnRefreshActionPerformed
 
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRowIndex = tblAddDoctors.getSelectedRow();
+        if(selectedRowIndex<0) {
+            JOptionPane.showMessageDialog(this, "Please select a row!");
+            return;
+        }
+        
+        
+        
+        DefaultTableModel model = (DefaultTableModel) tblAddDoctors.getModel();
+        DoctorInfo selectedDoctor = (DoctorInfo) model.getValueAt(selectedRowIndex, 0);
+        
+        
+        //txtPatName.setText(model.getValueAt(selectedRowIndex, 0).toString());
+        
+        
+        txtName.setText(selectedDoctor.getDoctorName());
+        txtHosp.setText(selectedDoctor.getHospitalName());
+        txtCity.setText(selectedDoctor.getHospitalCity());
+        txtComm.setText(selectedDoctor.getHospitalCommunity());
+        
+    }//GEN-LAST:event_btnViewActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = tblAddDoctors.getSelectedRow();
+        
+        if(selectedRowIndex<0) {
+            
+            JOptionPane.showMessageDialog(this, "Please select the row!");
+            return;
+        }
+        
+        DefaultTableModel model = (DefaultTableModel) tblAddDoctors.getModel();
+        DoctorInfo selectDoctor = (DoctorInfo) model.getValueAt(selectedRowIndex, 0);
+        
+        history.deleteDoctor(selectDoctor);
+        JOptionPane.showMessageDialog(this, "Doctor Information Deleted!");
+        displayTable();
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
@@ -274,7 +350,7 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
         for (DoctorInfo di : history.getHistory()){
             
             Object[] row = new Object[4];
-            row[0] = di.getDoctorName();
+            row[0] = di;
             row[1] = di.getHospitalName();
             row[2] = di.getHospitalCity();
             row[3] = di.getHospitalCommunity();

@@ -51,6 +51,11 @@ public class DoctorInfo {
         this.hospitalCommunity = hospitalCommunity;
     }
     
+    @Override
+    public String toString(){
+        return doctorName;
+    }
+    
     
     
 }

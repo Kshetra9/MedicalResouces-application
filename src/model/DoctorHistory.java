@@ -34,4 +34,9 @@ public class DoctorHistory {
         return addDoctor;
     }
     
+    public void deleteDoctor(DoctorInfo di){
+        
+        history.remove(di);
+    }
+    
 }
