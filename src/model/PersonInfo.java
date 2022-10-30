@@ -12,9 +12,38 @@ package model;
 public class PersonInfo {
     
     private String personName;
-    private String personCity;
-    private int personAge;
+    private String personHouse;
     private String personCommunity;
+    private String personCity;
+    private int patientID;
+    private String hospNear;
+    private int personAge;
+
+    public String getPersonHouse() {
+        return personHouse;
+    }
+
+    public void setPersonHouse(String personHouse) {
+        this.personHouse = personHouse;
+    }
+
+    public int getPatientID() {
+        return patientID;
+    }
+
+    public void setPatientID(int patientID) {
+        this.patientID = patientID;
+    }
+
+    public String getHospNear() {
+        return hospNear;
+    }
+
+    public void setHospNear(String hospNear) {
+        this.hospNear = hospNear;
+    }
+    
+    
 
     public String getPersonName() {
         return personName;
@@ -48,6 +77,10 @@ public class PersonInfo {
         this.personCommunity = personCommunity;
     }
     
+    @Override
+    public String toString(){
+        return personName;
+    }
     
     
 }

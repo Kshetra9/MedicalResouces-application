@@ -12,6 +12,10 @@ import model.EncounterHistory;
 import model.HospitalHistory;
 import model.PatientInfo;
 import model.HospitalDirectory;
+import model.CommunityHistory;
+import model.CommunityInfo;
+import model.PersonHistory;
+import model.PersonInfo;
 
 /**
  *
@@ -25,6 +29,8 @@ public class MainJFrame extends javax.swing.JFrame {
     DoctorHistory history;
     EncounterHistory encounterhistory;
     HospitalHistory hosphistory;
+    CommunityHistory commhistory;
+    PersonHistory personhistory;
     
     
     
@@ -33,6 +39,8 @@ public class MainJFrame extends javax.swing.JFrame {
         history = new DoctorHistory();
         encounterhistory = new EncounterHistory();
         hosphistory = new HospitalHistory();
+        commhistory = new CommunityHistory();
+        personhistory = new PersonHistory();
         
         
     }
@@ -267,6 +275,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnSystemPersonsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSystemPersonsActionPerformed
         // TODO add your handling code here:
+        ManagePersonsJPanel manageperson = new ManagePersonsJPanel(personhistory);
+        splitPane.setRightComponent(manageperson);
     }//GEN-LAST:event_btnSystemPersonsActionPerformed
 
     private void btnSystemHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSystemHospitalActionPerformed
@@ -278,6 +288,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnSystemCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSystemCommunityActionPerformed
         // TODO add your handling code here:
+        ManageCommunityJPanel managecommunity = new ManageCommunityJPanel(commhistory);
+        splitPane.setRightComponent(managecommunity);
     }//GEN-LAST:event_btnSystemCommunityActionPerformed
 
     private void btnSystemDoctorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSystemDoctorsActionPerformed
