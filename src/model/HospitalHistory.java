@@ -14,6 +14,11 @@ import java.util.ArrayList;
 public class HospitalHistory {
     
     private ArrayList<HospitalDirectory> hospitalhistory;
+    
+    public HospitalHistory() {
+    
+        this.hospitalhistory = new ArrayList<HospitalDirectory>();
+}
 
     public ArrayList<HospitalDirectory> getHospitalhistory() {
         return hospitalhistory;

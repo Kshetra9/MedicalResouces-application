@@ -9,7 +9,9 @@ import java.awt.CardLayout;
 import javax.swing.JPanel;
 import model.DoctorHistory;
 import model.EncounterHistory;
+import model.HospitalHistory;
 import model.PatientInfo;
+import model.HospitalDirectory;
 
 /**
  *
@@ -22,6 +24,7 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     DoctorHistory history;
     EncounterHistory encounterhistory;
+    HospitalHistory hosphistory;
     
     
     
@@ -29,6 +32,7 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
         history = new DoctorHistory();
         encounterhistory = new EncounterHistory();
+        hosphistory = new HospitalHistory();
         
         
     }
@@ -267,6 +271,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnSystemHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSystemHospitalActionPerformed
         // TODO add your handling code here:
+        ManageHospitalJPanel addHospital = new ManageHospitalJPanel(hosphistory);
+        splitPane.setRightComponent(addHospital);
+        
     }//GEN-LAST:event_btnSystemHospitalActionPerformed
 
     private void btnSystemCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSystemCommunityActionPerformed
@@ -275,6 +282,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnSystemDoctorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSystemDoctorsActionPerformed
         // TODO add your handling code here:
+        ManageDoctorsJPanel managedoctors = new ManageDoctorsJPanel(history);
+        splitPane.setRightComponent(managedoctors);
     }//GEN-LAST:event_btnSystemDoctorsActionPerformed
 
     /**

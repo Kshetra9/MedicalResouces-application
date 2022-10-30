@@ -15,8 +15,8 @@ public class HospitalDirectory {
     String docName;
     String hospCity;
     String hospCommunity;
-    String totalEmployees;
-    String commPopulation;
+    int totalEmployees;
+    int commPopulation;
 
     public String getHospName() {
         return hospName;
@@ -50,21 +50,24 @@ public class HospitalDirectory {
         this.hospCommunity = hospCommunity;
     }
 
-    public String getTotalEmployees() {
+    public int getTotalEmployees() {
         return totalEmployees;
     }
 
-    public void setTotalEmployees(String totalEmployees) {
+    public void setTotalEmployees(int totalEmployees) {
         this.totalEmployees = totalEmployees;
     }
 
-    public String getCommPopulation() {
+    public int getCommPopulation() {
         return commPopulation;
     }
 
-    public void setCommPopulation(String commPopulation) {
+    public void setCommPopulation(int commPopulation) {
         this.commPopulation = commPopulation;
     }
+
+    
+
     
     @Override
     public String toString(){
