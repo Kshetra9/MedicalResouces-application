@@ -61,6 +61,8 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         btnSave1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPatientsDirectory = new javax.swing.JTable();
+        btnView = new javax.swing.JButton();
+        test = new javax.swing.JTextField();
 
         jLabel2.setText("Add Patient Details");
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -130,6 +132,13 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblPatientsDirectory);
 
+        btnView.setText("View");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -169,8 +178,19 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                                     .addComponent(txtPatID, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtEncID, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtPulse, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(209, 209, 209)
+                                                .addComponent(btnView))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(135, 135, 135)
+                                                .addComponent(test, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(0, 0, Short.MAX_VALUE)))))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -197,19 +217,25 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPatID)
                     .addComponent(txtPatID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEncID)
-                    .addComponent(txtEncID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(txtEncID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnView))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblBP)
                     .addComponent(txtBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPulse)
-                    .addComponent(txtPulse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblPulse)
+                            .addComponent(txtPulse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(test, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAssigned)
                     .addComponent(txtAssigned, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -225,7 +251,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd)
                     .addComponent(btnSave1))
-                .addGap(0, 46, Short.MAX_VALUE))
+                .addGap(0, 300, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -317,13 +343,59 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             model.setValueAt(assignedDoctor, tblPatientsDirectory.getSelectedRow(), 7);
             model.setValueAt(d1, tblPatientsDirectory.getSelectedRow(), 8);
             model.setValueAt(diagnosis, tblPatientsDirectory.getSelectedRow(), 9);
+            
         }
     }//GEN-LAST:event_btnSave1ActionPerformed
+
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        // TODO add your handling code here:
+        
+        
+        
+        int selectedRowIndex = tblPatientsDirectory.getSelectedRow();
+        if(selectedRowIndex<0) {
+            JOptionPane.showMessageDialog(this, "Please select a row!");
+            return;
+        }
+        
+        
+        
+        DefaultTableModel model = (DefaultTableModel) tblPatientsDirectory.getModel();
+        //PatientInfo selectedPatient = (PatientInfo) model1.getValueAt(selectedRowIndex, 0);
+        //txtName.setText(String.valueOf(selectedPatient.getPatientName()));
+        
+        txtPatName.setText(model.getValueAt(selectedRowIndex, 0).toString());
+        txtPatAge.setText(model.getValueAt(selectedRowIndex, 1).toString());
+        txtPatCity.setText(model.getValueAt(selectedRowIndex, 2).toString());
+        txtPatID.setText(model.getValueAt(selectedRowIndex, 3).toString());
+        txtEncID.setText(model.getValueAt(selectedRowIndex, 4).toString());
+        txtBP.setText(model.getValueAt(selectedRowIndex, 5).toString());
+        txtPulse.setText(model.getValueAt(selectedRowIndex, 6).toString());
+        txtAssigned.setText(model.getValueAt(selectedRowIndex, 7).toString());
+        txtDate.setText(model.getValueAt(selectedRowIndex, 8).toString());
+        txtReport.setText(model.getValueAt(selectedRowIndex, 9).toString());
+        
+        /* txtPatName.setText(selectedpatient.getPatientName());
+        txtPatAge.setText(String.valueOf(selectedpatient.getAge()));
+        txtPatCity.setText(selectedpatient.getCity());
+        txtPatID.setText(String.valueOf(selectedpatient.getPatientId()));
+        txtEncID.setText(String.valueOf(selectedpatient.getEncounterId()));
+        txtBP.setText(String.valueOf(selectedpatient.getBloodPressure()));
+        txtPulse.setText(String.valueOf(selectedpatient.getBloodPressure()));
+        txtAssigned.setText(selectedpatient.getAssignedDoctor());
+        txtDate.setText(String.valueOf(selectedpatient.getD1()));
+        txtReport.setText(selectedpatient.getDiagnosis()); */
+        
+        
+        
+        
+    }//GEN-LAST:event_btnViewActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnSave1;
+    private javax.swing.JButton btnView;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAssigned;
@@ -337,6 +409,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblPulse;
     private javax.swing.JLabel lblReport;
     private javax.swing.JTable tblPatientsDirectory;
+    private javax.swing.JTextField test;
     private javax.swing.JTextField txtAssigned;
     private javax.swing.JTextField txtBP;
     private javax.swing.JTextField txtDate;
