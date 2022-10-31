@@ -76,6 +76,8 @@ public class DoctorLoginJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblDoctorLogin);
 
+        btnView.setBackground(new java.awt.Color(102, 102, 0));
+        btnView.setForeground(new java.awt.Color(255, 255, 255));
         btnView.setText("View");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +85,8 @@ public class DoctorLoginJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnUpdate.setBackground(new java.awt.Color(102, 102, 0));
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

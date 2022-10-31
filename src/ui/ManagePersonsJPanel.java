@@ -57,6 +57,8 @@ public class ManagePersonsJPanel extends javax.swing.JPanel {
         lblHosp2 = new javax.swing.JLabel();
         txtAge = new javax.swing.JTextField();
 
+        btnAdd.setBackground(new java.awt.Color(51, 51, 0));
+        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
         btnAdd.setText("Add");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +66,8 @@ public class ManagePersonsJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnUpdate.setBackground(new java.awt.Color(51, 51, 0));
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +94,8 @@ public class ManagePersonsJPanel extends javax.swing.JPanel {
 
         lblAddr.setText("House");
 
+        btnView.setBackground(new java.awt.Color(51, 51, 0));
+        btnView.setForeground(new java.awt.Color(255, 255, 255));
         btnView.setText("View");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,6 +105,8 @@ public class ManagePersonsJPanel extends javax.swing.JPanel {
 
         lblCity.setText("Community");
 
+        btnRefresh.setBackground(new java.awt.Color(51, 51, 0));
+        btnRefresh.setForeground(new java.awt.Color(255, 255, 255));
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +116,8 @@ public class ManagePersonsJPanel extends javax.swing.JPanel {
 
         lblComm.setText("City");
 
+        btnDelete.setBackground(new java.awt.Color(51, 51, 0));
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

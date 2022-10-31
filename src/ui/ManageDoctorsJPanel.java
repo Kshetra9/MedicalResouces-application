@@ -50,7 +50,7 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
         tblAddDoctors = new javax.swing.JTable();
         btnView = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         lblTitle.setText("Doctor Directory Information");
 
@@ -80,6 +80,8 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnAdd.setBackground(new java.awt.Color(0, 51, 51));
+        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
         btnAdd.setText("Add");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +89,8 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnUpdate.setBackground(new java.awt.Color(0, 51, 51));
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +111,8 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblAddDoctors);
 
+        btnView.setBackground(new java.awt.Color(0, 51, 51));
+        btnView.setForeground(new java.awt.Color(255, 255, 255));
         btnView.setText("View");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,6 +120,8 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnRefresh.setBackground(new java.awt.Color(0, 51, 51));
+        btnRefresh.setForeground(new java.awt.Color(255, 255, 255));
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,10 +129,12 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnDelete.setText("Delete");
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setBackground(new java.awt.Color(0, 51, 51));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Delete");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -166,7 +176,7 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(btnRefresh)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnDelete)))))
+                                .addComponent(jButton1)))))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -203,7 +213,7 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnView)
                             .addComponent(btnRefresh)
-                            .addComponent(btnDelete))))
+                            .addComponent(jButton1))))
                 .addContainerGap(144, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -303,7 +313,7 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnViewActionPerformed
 
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         int selectedRowIndex = tblAddDoctors.getSelectedRow();
         
@@ -319,15 +329,15 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
         history.deleteDoctor(selectDoctor);
         JOptionPane.showMessageDialog(this, "Doctor Information Deleted!");
         displayTable();
-    }//GEN-LAST:event_btnDeleteActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblComm;

@@ -83,6 +83,8 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
 
         lblReport.setText("Report");
 
+        btnAdd.setBackground(new java.awt.Color(102, 102, 255));
+        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
         btnAdd.setText("Add");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,6 +118,8 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnSave1.setBackground(new java.awt.Color(102, 102, 255));
+        btnSave1.setForeground(new java.awt.Color(255, 255, 255));
         btnSave1.setText("Update");
         btnSave1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,6 +140,8 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblPatientsDirectory);
 
+        btnView.setBackground(new java.awt.Color(102, 102, 255));
+        btnView.setForeground(new java.awt.Color(255, 255, 255));
         btnView.setText("View");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,6 +149,8 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnDelete.setBackground(new java.awt.Color(102, 102, 255));
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,6 +158,8 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnRefresh.setBackground(new java.awt.Color(102, 102, 255));
+        btnRefresh.setForeground(new java.awt.Color(255, 255, 255));
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

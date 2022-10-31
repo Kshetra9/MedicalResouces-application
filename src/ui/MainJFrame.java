@@ -70,6 +70,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        btnHospital.setBackground(new java.awt.Color(102, 0, 102));
+        btnHospital.setForeground(new java.awt.Color(255, 255, 255));
         btnHospital.setText("Hosp. Admin: Add Details");
         btnHospital.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +79,8 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnDoctor.setBackground(new java.awt.Color(102, 102, 0));
+        btnDoctor.setForeground(new java.awt.Color(255, 255, 255));
         btnDoctor.setText("Doctor Login");
         btnDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +88,8 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnCommunity.setBackground(new java.awt.Color(0, 102, 153));
+        btnCommunity.setForeground(new java.awt.Color(255, 255, 255));
         btnCommunity.setText("Comm. Admin");
         btnCommunity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +97,8 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnPatient.setBackground(new java.awt.Color(51, 51, 51));
+        btnPatient.setForeground(new java.awt.Color(255, 255, 255));
         btnPatient.setText("Find Doctor");
         btnPatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +106,8 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnSystemPatient.setBackground(new java.awt.Color(102, 102, 255));
+        btnSystemPatient.setForeground(new java.awt.Color(255, 255, 255));
         btnSystemPatient.setText("System Admin : Manage Patients Directory");
         btnSystemPatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +115,8 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnHospital1.setBackground(new java.awt.Color(0, 102, 102));
+        btnHospital1.setForeground(new java.awt.Color(255, 255, 255));
         btnHospital1.setText("Hosp. Admin: Add Patient");
         btnHospital1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,6 +124,8 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnSystemPersons.setBackground(new java.awt.Color(51, 51, 0));
+        btnSystemPersons.setForeground(new java.awt.Color(255, 255, 255));
         btnSystemPersons.setText("System Admin : Manage Persons Directory");
         btnSystemPersons.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,6 +133,8 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnSystemHospital.setBackground(new java.awt.Color(0, 102, 102));
+        btnSystemHospital.setForeground(new java.awt.Color(255, 255, 255));
         btnSystemHospital.setText("System Admin : Manage Hospital Directory");
         btnSystemHospital.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,6 +142,8 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnSystemCommunity.setBackground(new java.awt.Color(0, 102, 102));
+        btnSystemCommunity.setForeground(new java.awt.Color(255, 255, 255));
         btnSystemCommunity.setText("System Admin : Manage Community Directory");
         btnSystemCommunity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,6 +151,8 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnSystemDoctors.setBackground(new java.awt.Color(0, 51, 51));
+        btnSystemDoctors.setForeground(new java.awt.Color(255, 255, 255));
         btnSystemDoctors.setText("System Admin : Manage Doctors Directory");
         btnSystemDoctors.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

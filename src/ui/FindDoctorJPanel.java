@@ -67,6 +67,8 @@ public class FindDoctorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblFindDoctor);
 
+        btnView.setBackground(new java.awt.Color(51, 51, 51));
+        btnView.setForeground(new java.awt.Color(255, 255, 255));
         btnView.setText("View");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
