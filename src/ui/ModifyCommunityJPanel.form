@@ -115,8 +115,8 @@
               <Table columnCount="5" rowCount="4">
                 <Column editable="true" title="Person Name" type="java.lang.Object"/>
                 <Column editable="true" title="Address" type="java.lang.Object"/>
+                <Column editable="true" title="Community" type="java.lang.Object"/>
                 <Column editable="true" title="City" type="java.lang.Object"/>
-                <Column editable="true" title="Community Name" type="java.lang.Object"/>
                 <Column editable="true" title="Nearby Hospital" type="java.lang.Object"/>
               </Table>
             </Property>
@@ -189,6 +189,7 @@
     <Component class="javax.swing.JTextField" name="txtName">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNameActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNameKeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAddress">
@@ -197,10 +198,19 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCity">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCityKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCommunity">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCommunityKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtHosp">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtHospKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnUpdate">
       <Properties>

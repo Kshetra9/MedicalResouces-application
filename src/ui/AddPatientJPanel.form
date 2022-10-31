@@ -161,7 +161,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblBP">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Blood Pressure"/>
+        <Property name="text" type="java.lang.String" value="Heart Rate"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblPulse">
@@ -180,31 +180,52 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPatName">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPatNameKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPatAge">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPatAgeKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPatCity">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPatCityActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPatCityKeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPatID">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPatIDActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPatIDKeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEncID">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEncIDKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtBP">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBPActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtBPKeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPulse">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPulseKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAssigned">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtAssignedKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtDate">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDateKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnSave">
       <Properties>
@@ -223,6 +244,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtReport">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtReportKeyPressed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

@@ -60,7 +60,7 @@ public class ModifyCommunityJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Person Name", "Address", "City", "Community Name", "Nearby Hospital"
+                "Person Name", "Address", "Community", "City", "Nearby Hospital"
             }
         ));
         jScrollPane1.setViewportView(tblAddCommunity);
@@ -82,10 +82,33 @@ public class ModifyCommunityJPanel extends javax.swing.JPanel {
                 txtNameActionPerformed(evt);
             }
         });
+        txtName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNameKeyPressed(evt);
+            }
+        });
 
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAddressActionPerformed(evt);
+            }
+        });
+
+        txtCity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCityKeyReleased(evt);
+            }
+        });
+
+        txtCommunity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCommunityKeyPressed(evt);
+            }
+        });
+
+        txtHosp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtHospKeyPressed(evt);
             }
         });
 
@@ -228,6 +251,54 @@ public class ModifyCommunityJPanel extends javax.swing.JPanel {
             model.setValueAt(hospNearby, tblAddCommunity.getSelectedRow(), 4);
         }
     }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void txtNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtName.setEditable(false);
+        }
+        else {
+            txtName.setEditable(true);
+        }
+    }//GEN-LAST:event_txtNameKeyPressed
+
+    private void txtCityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCityKeyReleased
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtCity.setEditable(false);
+        }
+        else {
+            txtCity.setEditable(true);
+        }
+    }//GEN-LAST:event_txtCityKeyReleased
+
+    private void txtCommunityKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCommunityKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtCommunity.setEditable(false);
+        }
+        else {
+            txtCommunity.setEditable(true);
+        }
+    }//GEN-LAST:event_txtCommunityKeyPressed
+
+    private void txtHospKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHospKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtHosp.setEditable(false);
+        }
+        else {
+            txtHosp.setEditable(true);
+        }
+    }//GEN-LAST:event_txtHospKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

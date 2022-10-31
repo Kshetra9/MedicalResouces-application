@@ -71,7 +71,7 @@ public class DoctorLoginJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Patient Name", "Age", "ID", "Encounter", "Blood Press", "Pulse", "EncounterID", "Diagnosis", "City", "Assigned Doctor"
+                "Patient Name", "Age", "ID", "Encounter", "Heart Rate", "Pulse", "EncounterID", "Diagnosis", "City", "Assigned Doctor"
             }
         ));
         jScrollPane1.setViewportView(tblDoctorLogin);
@@ -100,7 +100,7 @@ public class DoctorLoginJPanel extends javax.swing.JPanel {
 
         lblID.setText("ID");
 
-        lblBP.setText("Blood Pressure");
+        lblBP.setText("Heart Rate");
 
         lblEncounter.setText("Encounter");
 
@@ -129,6 +129,11 @@ public class DoctorLoginJPanel extends javax.swing.JPanel {
         });
 
         txtDiagnosis.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtDiagnosis.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtDiagnosisKeyPressed(evt);
+            }
+        });
 
         txtEncID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,7 +197,7 @@ public class DoctorLoginJPanel extends javax.swing.JPanel {
                         .addComponent(btnUpdate)
                         .addGap(77, 77, 77)
                         .addComponent(txtSearch)))
-                .addGap(0, 33, Short.MAX_VALUE))
+                .addGap(0, 44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,8 +280,11 @@ public class DoctorLoginJPanel extends javax.swing.JPanel {
         //PatientInfo selectPatient = (PatientInfo)model.getValueAt(selectedRowIndex, 0);
         
         if(tblDoctorLogin.getSelectedRowCount() == 1) {
+            
             String diagnosis = txtDiagnosis.getText();
             model.setValueAt(diagnosis, tblDoctorLogin.getSelectedRow(), 7);
+            model.setValueAt(String.valueOf(txtBP.getText()), tblDoctorLogin.getSelectedRow(), 4);
+            model.setValueAt(String.valueOf(txtPulse.getText()), tblDoctorLogin.getSelectedRow(), 5);
         }
         
         
@@ -314,6 +322,18 @@ public class DoctorLoginJPanel extends javax.swing.JPanel {
         tblDoctorLogin.setRowSorter(tr);
         tr.setRowFilter(RowFilter.regexFilter(txtSearch.getText().trim()));
     }//GEN-LAST:event_txtSearchKeyPressed
+
+    private void txtDiagnosisKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiagnosisKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtDiagnosis.setEditable(false);
+        }
+        else {
+            txtDiagnosis.setEditable(true);
+        }
+    }//GEN-LAST:event_txtDiagnosisKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -130,6 +130,11 @@ public class ManagePersonsJPanel extends javax.swing.JPanel {
                 txtNameActionPerformed(evt);
             }
         });
+        txtName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNameKeyPressed(evt);
+            }
+        });
 
         lblHosp.setText("Patient ID");
 
@@ -144,20 +149,47 @@ public class ManagePersonsJPanel extends javax.swing.JPanel {
                 txtpatIDActionPerformed(evt);
             }
         });
+        txtpatID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtpatIDKeyPressed(evt);
+            }
+        });
+
+        txtCommunity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCommunityKeyPressed(evt);
+            }
+        });
 
         txtCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCityActionPerformed(evt);
             }
         });
+        txtCity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCityKeyPressed(evt);
+            }
+        });
 
         lblHosp1.setText("Nearest Hospital");
+
+        txtHosp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtHospKeyPressed(evt);
+            }
+        });
 
         lblHosp2.setText("Age");
 
         txtAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAgeActionPerformed(evt);
+            }
+        });
+        txtAge.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAgeKeyPressed(evt);
             }
         });
 
@@ -393,6 +425,78 @@ public class ManagePersonsJPanel extends javax.swing.JPanel {
     private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAgeActionPerformed
+
+    private void txtNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtName.setEditable(false);
+        }
+        else {
+            txtName.setEditable(true);
+        }
+    }//GEN-LAST:event_txtNameKeyPressed
+
+    private void txtCommunityKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCommunityKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtCommunity.setEditable(false);
+        }
+        else {
+            txtCommunity.setEditable(true);
+        }
+    }//GEN-LAST:event_txtCommunityKeyPressed
+
+    private void txtCityKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCityKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtCity.setEditable(false);
+        }
+        else {
+            txtCity.setEditable(true);
+        }
+    }//GEN-LAST:event_txtCityKeyPressed
+
+    private void txtHospKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHospKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtHosp.setEditable(false);
+        }
+        else {
+            txtHosp.setEditable(true);
+        }
+    }//GEN-LAST:event_txtHospKeyPressed
+
+    private void txtpatIDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpatIDKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only!");
+            txtpatID.setEditable(false);
+        }
+        else {
+            txtpatID.setEditable(true);
+        }
+    }//GEN-LAST:event_txtpatIDKeyPressed
+
+    private void txtAgeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only!");
+            txtAge.setEditable(false);
+        }
+        else {
+            txtAge.setEditable(true);
+        }
+    }//GEN-LAST:event_txtAgeKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

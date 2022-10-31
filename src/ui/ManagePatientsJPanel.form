@@ -57,7 +57,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane1" pref="540" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane1" pref="541" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
@@ -158,6 +158,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPulse">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPulseKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblPatName">
       <Properties>
@@ -165,6 +168,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAssigned">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtAssignedKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblPatAge">
       <Properties>
@@ -179,6 +185,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPatName">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPatNameKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblPatID">
       <Properties>
@@ -196,6 +205,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtReport">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtReportKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnAdd">
       <Properties>
@@ -213,7 +225,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblBP">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Blood Pressure"/>
+        <Property name="text" type="java.lang.String" value="Heart Rate"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblAssigned">
@@ -222,6 +234,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPatAge">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPatAgeKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblPulse">
       <Properties>
@@ -236,18 +251,24 @@
     <Component class="javax.swing.JTextField" name="txtPatCity">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPatCityActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPatCityKeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPatID">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPatIDActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPatIDKeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEncID">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEncIDKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtBP">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBPActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtBPKeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnSave1">
@@ -279,13 +300,67 @@
                 <Column editable="true" title="Age" type="java.lang.Object"/>
                 <Column editable="true" title="ID" type="java.lang.Object"/>
                 <Column editable="true" title="Encounter" type="java.lang.Object"/>
-                <Column editable="true" title="Blood Press" type="java.lang.Object"/>
+                <Column editable="true" title="Heart Rate" type="java.lang.Object"/>
                 <Column editable="true" title="Pulse" type="java.lang.Object"/>
                 <Column editable="true" title="EncounterID" type="java.lang.Object"/>
                 <Column editable="true" title="Diagnosis" type="java.lang.Object"/>
                 <Column editable="true" title="City" type="java.lang.Object"/>
                 <Column editable="true" title="Assigned Doctor" type="java.lang.Object"/>
               </Table>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
             </Property>
             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>

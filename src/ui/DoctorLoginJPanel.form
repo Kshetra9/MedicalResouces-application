@@ -68,7 +68,7 @@
                       <Component id="txtSearch" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="0" pref="33" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="44" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -149,7 +149,7 @@
                 <Column editable="true" title="Age" type="java.lang.Object"/>
                 <Column editable="true" title="ID" type="java.lang.Object"/>
                 <Column editable="true" title="Encounter" type="java.lang.Object"/>
-                <Column editable="true" title="Blood Press" type="java.lang.Object"/>
+                <Column editable="true" title="Heart Rate" type="java.lang.Object"/>
                 <Column editable="true" title="Pulse" type="java.lang.Object"/>
                 <Column editable="true" title="EncounterID" type="java.lang.Object"/>
                 <Column editable="true" title="Diagnosis" type="java.lang.Object"/>
@@ -263,7 +263,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblBP">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Blood Pressure"/>
+        <Property name="text" type="java.lang.String" value="Heart Rate"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblEncounter">
@@ -311,6 +311,9 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDiagnosisKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEncID">
       <Events>

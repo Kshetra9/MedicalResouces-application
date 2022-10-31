@@ -72,7 +72,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         btnHospital.setBackground(new java.awt.Color(102, 0, 102));
         btnHospital.setForeground(new java.awt.Color(255, 255, 255));
-        btnHospital.setText("Hosp. Admin: Add Details");
+        btnHospital.setText("Hosp. Admin: Add Hospital Details");
         btnHospital.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHospitalActionPerformed(evt);
@@ -81,7 +81,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         btnDoctor.setBackground(new java.awt.Color(102, 102, 0));
         btnDoctor.setForeground(new java.awt.Color(255, 255, 255));
-        btnDoctor.setText("Doctor Login");
+        btnDoctor.setText("Login as a Doctor");
         btnDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDoctorActionPerformed(evt);

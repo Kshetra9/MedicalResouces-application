@@ -22,6 +22,9 @@ public class AddPatientJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AddPatientJPanel
      */
+    
+    
+
     EncounterHistory history;
 
     public AddPatientJPanel(EncounterHistory history) {
@@ -77,7 +80,7 @@ public class AddPatientJPanel extends javax.swing.JPanel {
 
         lblEncID.setText("Encounter ID");
 
-        lblBP.setText("Blood Pressure");
+        lblBP.setText("Heart Rate");
 
         lblPulse.setText("Pulse");
 
@@ -85,9 +88,26 @@ public class AddPatientJPanel extends javax.swing.JPanel {
 
         lblDate.setText("Date");
 
+        txtPatName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPatNameKeyPressed(evt);
+            }
+        });
+
+        txtPatAge.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPatAgeKeyPressed(evt);
+            }
+        });
+
         txtPatCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPatCityActionPerformed(evt);
+            }
+        });
+        txtPatCity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPatCityKeyPressed(evt);
             }
         });
 
@@ -96,10 +116,44 @@ public class AddPatientJPanel extends javax.swing.JPanel {
                 txtPatIDActionPerformed(evt);
             }
         });
+        txtPatID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPatIDKeyPressed(evt);
+            }
+        });
+
+        txtEncID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEncIDKeyPressed(evt);
+            }
+        });
 
         txtBP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBPActionPerformed(evt);
+            }
+        });
+        txtBP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtBPKeyPressed(evt);
+            }
+        });
+
+        txtPulse.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPulseKeyPressed(evt);
+            }
+        });
+
+        txtAssigned.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAssignedKeyPressed(evt);
+            }
+        });
+
+        txtDate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtDateKeyPressed(evt);
             }
         });
 
@@ -112,6 +166,12 @@ public class AddPatientJPanel extends javax.swing.JPanel {
         });
 
         lblReport.setText("Report");
+
+        txtReport.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtReportKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -261,6 +321,120 @@ public class AddPatientJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 
+    private void txtPatNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatNameKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtPatName.setEditable(false);
+        }
+        else {
+            txtPatName.setEditable(true);
+        }
+    }//GEN-LAST:event_txtPatNameKeyPressed
+
+    private void txtPatAgeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatAgeKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only!");
+            txtPatAge.setEditable(false);
+        }
+        else {
+            txtPatAge.setEditable(true);
+        }
+    }//GEN-LAST:event_txtPatAgeKeyPressed
+
+    private void txtPatCityKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatCityKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtPatCity.setEditable(false);
+        }
+        else {
+            txtPatCity.setEditable(true);
+        }
+    }//GEN-LAST:event_txtPatCityKeyPressed
+
+    private void txtPatIDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatIDKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only!");
+            txtPatID.setEditable(false);
+        }
+        else {
+            txtPatID.setEditable(true);
+        }
+        
+    }//GEN-LAST:event_txtPatIDKeyPressed
+
+    private void txtEncIDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEncIDKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only!");
+            txtEncID.setEditable(false);
+        }
+        else {
+            txtEncID.setEditable(true);
+        }
+    }//GEN-LAST:event_txtEncIDKeyPressed
+
+    private void txtBPKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBPKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only!");
+            txtBP.setEditable(false);
+        }
+        else {
+            txtBP.setEditable(true);
+        }
+    }//GEN-LAST:event_txtBPKeyPressed
+
+    private void txtPulseKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPulseKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only!");
+            txtPulse.setEditable(false);
+        }
+        else {
+            txtPulse.setEditable(true);
+        }
+    }//GEN-LAST:event_txtPulseKeyPressed
+
+    private void txtAssignedKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAssignedKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtAssigned.setEditable(false);
+        }
+        else {
+            txtAssigned.setEditable(true);
+        }
+    }//GEN-LAST:event_txtAssignedKeyPressed
+
+    private void txtReportKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtReportKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtReport.setEditable(false);
+        }
+        else {
+            txtReport.setEditable(true);
+        }
+    }//GEN-LAST:event_txtReportKeyPressed
+
+    private void txtDateKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDateKeyPressed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_txtDateKeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSave;
@@ -288,3 +462,5 @@ public class AddPatientJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtReport;
     // End of variables declaration//GEN-END:variables
 }
+
+

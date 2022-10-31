@@ -67,16 +67,37 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
                 txtNameActionPerformed(evt);
             }
         });
+        txtName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNameKeyPressed(evt);
+            }
+        });
 
         txtHosp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHospActionPerformed(evt);
             }
         });
+        txtHosp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtHospKeyPressed(evt);
+            }
+        });
+
+        txtCity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCityKeyPressed(evt);
+            }
+        });
 
         txtComm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCommActionPerformed(evt);
+            }
+        });
+        txtComm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCommKeyPressed(evt);
             }
         });
 
@@ -330,6 +351,54 @@ public class ManageDoctorsJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(this, "Doctor Information Deleted!");
         displayTable();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtName.setEditable(false);
+        }
+        else {
+            txtName.setEditable(true);
+        }
+    }//GEN-LAST:event_txtNameKeyPressed
+
+    private void txtHospKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHospKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtHosp.setEditable(false);
+        }
+        else {
+            txtHosp.setEditable(true);
+        }
+    }//GEN-LAST:event_txtHospKeyPressed
+
+    private void txtCityKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCityKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtCity.setEditable(false);
+        }
+        else {
+            txtCity.setEditable(true);
+        }
+    }//GEN-LAST:event_txtCityKeyPressed
+
+    private void txtCommKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCommKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtComm.setEditable(false);
+        }
+        else {
+            txtComm.setEditable(true);
+        }
+    }//GEN-LAST:event_txtCommKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

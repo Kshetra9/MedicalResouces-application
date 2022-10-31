@@ -71,17 +71,41 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         jLabel2.setText("Add Patient Details");
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        txtPulse.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPulseKeyPressed(evt);
+            }
+        });
+
         lblPatName.setText("Name");
+
+        txtAssigned.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAssignedKeyPressed(evt);
+            }
+        });
 
         lblPatAge.setText("Age");
 
         lblPatCity.setText("City");
+
+        txtPatName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPatNameKeyPressed(evt);
+            }
+        });
 
         lblPatID.setText("ID");
 
         lblEncID.setText("Encounter ID");
 
         lblReport.setText("Report");
+
+        txtReport.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtReportKeyPressed(evt);
+            }
+        });
 
         btnAdd.setBackground(new java.awt.Color(102, 102, 255));
         btnAdd.setForeground(new java.awt.Color(255, 255, 255));
@@ -92,9 +116,15 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblBP.setText("Blood Pressure");
+        lblBP.setText("Heart Rate");
 
         lblAssigned.setText("Doc. Assigned");
+
+        txtPatAge.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPatAgeKeyPressed(evt);
+            }
+        });
 
         lblPulse.setText("Pulse");
 
@@ -105,16 +135,37 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                 txtPatCityActionPerformed(evt);
             }
         });
+        txtPatCity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPatCityKeyPressed(evt);
+            }
+        });
 
         txtPatID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPatIDActionPerformed(evt);
             }
         });
+        txtPatID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPatIDKeyPressed(evt);
+            }
+        });
+
+        txtEncID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEncIDKeyPressed(evt);
+            }
+        });
 
         txtBP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBPActionPerformed(evt);
+            }
+        });
+        txtBP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtBPKeyPressed(evt);
             }
         });
 
@@ -135,7 +186,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Patient Name", "Age", "ID", "Encounter", "Blood Press", "Pulse", "EncounterID", "Diagnosis", "City", "Assigned Doctor"
+                "Patient Name", "Age", "ID", "Encounter", "Heart Rate", "Pulse", "EncounterID", "Diagnosis", "City", "Assigned Doctor"
             }
         ));
         jScrollPane1.setViewportView(tblPatientsDirectory);
@@ -209,7 +260,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE))
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(116, 116, 116)
                                         .addComponent(btnRefresh)
@@ -458,6 +509,114 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         displayTable();
     }//GEN-LAST:event_btnRefreshActionPerformed
+
+    private void txtPatNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatNameKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtPatName.setEditable(false);
+        }
+        else {
+            txtPatName.setEditable(true);
+        }
+    }//GEN-LAST:event_txtPatNameKeyPressed
+
+    private void txtPatCityKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatCityKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtPatCity.setEditable(false);
+        }
+        else {
+            txtPatCity.setEditable(true);
+        }
+    }//GEN-LAST:event_txtPatCityKeyPressed
+
+    private void txtAssignedKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAssignedKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtAssigned.setEditable(false);
+        }
+        else {
+            txtAssigned.setEditable(true);
+        }
+    }//GEN-LAST:event_txtAssignedKeyPressed
+
+    private void txtReportKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtReportKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtReport.setEditable(false);
+        }
+        else {
+            txtReport.setEditable(true);
+        }
+    }//GEN-LAST:event_txtReportKeyPressed
+
+    private void txtPatAgeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatAgeKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only!");
+            txtPatAge.setEditable(false);
+        }
+        else {
+            txtPatAge.setEditable(true);
+        }
+    }//GEN-LAST:event_txtPatAgeKeyPressed
+
+    private void txtPatIDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatIDKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only!");
+            txtPatID.setEditable(false);
+        }
+        else {
+            txtPatID.setEditable(true);
+        }
+    }//GEN-LAST:event_txtPatIDKeyPressed
+
+    private void txtEncIDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEncIDKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only!");
+            txtEncID.setEditable(false);
+        }
+        else {
+            txtEncID.setEditable(true);
+        }
+    }//GEN-LAST:event_txtEncIDKeyPressed
+
+    private void txtBPKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBPKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only!");
+            txtBP.setEditable(false);
+        }
+        else {
+            txtBP.setEditable(true);
+        }
+    }//GEN-LAST:event_txtBPKeyPressed
+
+    private void txtPulseKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPulseKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only!");
+            txtPulse.setEditable(false);
+        }
+        else {
+            txtPulse.setEditable(true);
+        }
+    }//GEN-LAST:event_txtPulseKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

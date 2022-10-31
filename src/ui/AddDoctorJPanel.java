@@ -53,9 +53,8 @@ public class AddDoctorJPanel extends javax.swing.JPanel {
         txtHospCity = new javax.swing.JTextField();
         txtComm = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
-        btnView = new javax.swing.JButton();
 
-        lblAddDoctor.setText("Add Doctor Details");
+        lblAddDoctor.setText("Add Hospital Details");
         lblAddDoctor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         btnDocName.setText("Name");
@@ -72,9 +71,20 @@ public class AddDoctorJPanel extends javax.swing.JPanel {
 
         btnComm.setText("Community");
 
+        txtHospital.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtHospitalKeyPressed(evt);
+            }
+        });
+
         txtHospCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHospCityActionPerformed(evt);
+            }
+        });
+        txtHospCity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtHospCityKeyPressed(evt);
             }
         });
 
@@ -90,15 +100,6 @@ public class AddDoctorJPanel extends javax.swing.JPanel {
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
-            }
-        });
-
-        btnView.setBackground(new java.awt.Color(102, 0, 102));
-        btnView.setForeground(new java.awt.Color(255, 255, 255));
-        btnView.setText("View");
-        btnView.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewActionPerformed(evt);
             }
         });
 
@@ -131,10 +132,8 @@ public class AddDoctorJPanel extends javax.swing.JPanel {
                             .addComponent(lblAddDoctor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(138, 138, 138)
-                        .addComponent(btnSave)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnView)))
-                .addContainerGap(94, Short.MAX_VALUE))
+                        .addComponent(btnSave)))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,9 +157,7 @@ public class AddDoctorJPanel extends javax.swing.JPanel {
                     .addComponent(btnComm)
                     .addComponent(txtComm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSave)
-                    .addComponent(btnView))
+                .addComponent(btnSave)
                 .addContainerGap(39, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -214,15 +211,6 @@ public class AddDoctorJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
-        // TODO add your handling code here:
-        TestJPanel test = new TestJPanel(userProcessContainer);
-        userProcessContainer.add("test", test);
-        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-        
-    }//GEN-LAST:event_btnViewActionPerformed
-
     private void txtDocNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDocNameKeyPressed
         // TODO add your handling code here:
         char c = evt.getKeyChar();
@@ -235,6 +223,30 @@ public class AddDoctorJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_txtDocNameKeyPressed
 
+    private void txtHospitalKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHospitalKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtHospital.setEditable(false);
+        }
+        else {
+            txtHospital.setEditable(true);
+        }
+    }//GEN-LAST:event_txtHospitalKeyPressed
+
+    private void txtHospCityKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHospCityKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)) {
+            JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
+            txtHospCity.setEditable(false);
+        }
+        else {
+            txtHospCity.setEditable(true);
+        }
+    }//GEN-LAST:event_txtHospCityKeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnComm;
@@ -242,7 +254,6 @@ public class AddDoctorJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel btnDocCity;
     private javax.swing.JLabel btnDocName;
     private javax.swing.JButton btnSave;
-    private javax.swing.JButton btnView;
     private javax.swing.JLabel lblAddDoctor;
     private javax.swing.JTextField txtComm;
     private javax.swing.JTextField txtDocName;
