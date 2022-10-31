@@ -345,9 +345,12 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             int bloodPressure = Integer.parseInt(txtBP.getText());
             int pulse = Integer.parseInt(txtPulse.getText());
             String assignedDoctor = txtAssigned.getText();
-            LocalDate d1 = LocalDate.parse(txtDate.getText());
+            
             String diagnosis = txtReport.getText();
 
+            try {
+                
+            LocalDate d1 = LocalDate.parse(txtDate.getText());
             PatientInfo pi = encounterhistory.addNewPatient();
 
             pi.setPatientName(patientName);
@@ -374,7 +377,12 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             txtDate.setText("");
             txtReport.setText("");
             displayTable();
-
+            }
+            catch (Exception e) {
+                
+                JOptionPane.showMessageDialog(this, "Please enter correct date format!");
+                
+            }
         }
     }//GEN-LAST:event_btnAddActionPerformed
 

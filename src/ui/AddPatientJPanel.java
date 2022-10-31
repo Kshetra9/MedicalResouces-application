@@ -5,6 +5,7 @@
  */
 package ui;
 
+
 import java.time.LocalDate;
 import java.util.Date;
 import static java.util.Date.parse;
@@ -151,6 +152,11 @@ public class AddPatientJPanel extends javax.swing.JPanel {
             }
         });
 
+        txtDate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDateActionPerformed(evt);
+            }
+        });
         txtDate.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtDateKeyPressed(evt);
@@ -289,22 +295,29 @@ public class AddPatientJPanel extends javax.swing.JPanel {
             int bloodPressure = Integer.parseInt(txtBP.getText());
             int pulse = Integer.parseInt(txtPulse.getText());
             String assignedDoctor = txtAssigned.getText();
-            LocalDate d1 = LocalDate.parse(txtDate.getText());
+            //LocalDate d1 = LocalDate.parse(txtDate.getText());
+            
+            
             String diagnosis = txtReport.getText();
 
 
-            PatientInfo pi = history.addNewPatient();
-
-            pi.setPatientName(patientName);
-            pi.setAge(age);
-            pi.setCity(city);
-            pi.setPatientId(patientId);
-            pi.setEncounterId(encounterId);
-            pi.setBloodPressure(bloodPressure);
-            pi.setPulse(pulse);
-            pi.setAssignedDoctor(assignedDoctor);
-            pi.setD1(d1);
-            pi.setDiagnosis(diagnosis);
+            
+            
+            try {
+                
+                LocalDate d1 = LocalDate.parse(txtDate.getText());
+                PatientInfo pi = history.addNewPatient();
+                pi.setD1(d1);
+                pi.setPatientName(patientName);
+                pi.setAge(age);
+                pi.setCity(city);
+                pi.setPatientId(patientId);
+                pi.setEncounterId(encounterId);
+                pi.setBloodPressure(bloodPressure);
+                pi.setPulse(pulse);
+                pi.setAssignedDoctor(assignedDoctor);
+                //pi.setD1(d1);
+                pi.setDiagnosis(diagnosis);
 
             JOptionPane.showMessageDialog(this, "Information Added!");
 
@@ -317,6 +330,15 @@ public class AddPatientJPanel extends javax.swing.JPanel {
             txtPulse.setText("");
             txtAssigned.setText("");
             txtDate.setText("");
+            txtReport.setText("");
+            }
+            catch (Exception e) {
+                
+                JOptionPane.showMessageDialog(this, "Please enter correct date format!");
+                
+            }
+
+            
             
         }
     }//GEN-LAST:event_btnSaveActionPerformed
@@ -324,6 +346,7 @@ public class AddPatientJPanel extends javax.swing.JPanel {
     private void txtPatNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatNameKeyPressed
         // TODO add your handling code here:
         char c = evt.getKeyChar();
+        
         if(Character.isDigit(c)) {
             JOptionPane.showMessageDialog(this, "Please enter alphabets only!");
             txtPatName.setEditable(false);
@@ -434,6 +457,10 @@ public class AddPatientJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_txtDateKeyPressed
+
+    private void txtDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
